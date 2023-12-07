@@ -5,7 +5,7 @@ const  Header = () => {
   return (
     <>
         <div className='container mx-auto w-4/5 mt-6  '>
-          <div className='flex justify-between	'>
+          <div className='flex justify-between'>
                     <a className={`img-block `} href='/'>
                         <span >
                             <img className='w-100' src='/imgs/meda-tech-logo-final 1.png' />
@@ -14,7 +14,7 @@ const  Header = () => {
                     <div className='place-self-center py-4 px-4 border-1  border-solid	w-1/2	 rounded-xl	border-[#5F1E1C]'>
                       <SearchAll />
                     </div>
-                    <div className='flex place-self-center px-4 gap-x-4	'>
+                    <div className='flex place-self-center gap-x-4	'>
                       <div className='flex'>
                       <svg width="18" height="25" viewBox="0 0 18 25" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path d="M18 24.3667H16V19.3237C15.9992 18.5397 15.6874 17.788 15.133 17.2337C14.5787 16.6793 13.827 16.3675 13.043 16.3667H4.957C4.173 16.3675 3.42134 16.6793 2.86696 17.2337C2.31259 17.788 2.00079 18.5397 2 19.3237V24.3667H0V19.3237C0.00158783 18.0095 0.524351 16.7496 1.45363 15.8203C2.3829 14.8911 3.64281 14.3683 4.957 14.3667H13.043C14.3572 14.3683 15.6171 14.8911 16.5464 15.8203C17.4756 16.7496 17.9984 18.0095 18 19.3237V24.3667Z" fill="#253D4E"/>
@@ -43,9 +43,8 @@ const  Header = () => {
           </div>
           <div>
             
-
           <nav className="bg-white border-gray-200 dark:bg-gray-900">
-            <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+            <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto py-4">
             <div className="hidden w-full md:block md:w-auto" id="navbar-default">
                 <ul className="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
                   <li>
@@ -65,7 +64,10 @@ const  Header = () => {
             </div>
               <a href="/" className="flex items-center space-x-3 rtl:space-x-reverse">
                   <img src="/imgs/Vector.svg" className="h-8" alt="Flowbite Logo" />
-                  <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">1900 - 8888</span>
+                  <div className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white flex flex-col leading-4">
+                    <span className='text-xl	text-[#5F1E1C]'>1900 - 8888</span>
+                    <span className='text-xs	text-gray-300	'>24/7 Support Center</span>
+                  </div>
               </a>
               <button data-collapse-toggle="navbar-default" type="button" className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-default" aria-expanded="false">
                   <span className="sr-only">Open main menu</span>
@@ -79,6 +81,7 @@ const  Header = () => {
 
           </div>
         </div>
+        <hr/>
     </>  
   )
 }
