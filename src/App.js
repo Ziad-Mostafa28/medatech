@@ -6,9 +6,9 @@ import Footer from './components/Layout/Footer/Footer';
 
 const App = () => {
   
-  fetch('http://localhost:3005/data')
-  .then((response) => response.json())
-  .then((json) => console.log(json));
+  // fetch('http://localhost:3005/data')
+  // .then((response) => response.json())
+  // .then((json) => console.log(json));
 
   return (
     <>
