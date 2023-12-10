@@ -14,7 +14,7 @@ const Banner = () => {
           <div className='absolute inset-x-0 w-full	h-full z-10	flex justify-center	flex-col flex-wrap	'>
           {Bannerss && Bannerss?.map((data) =>
               <div className='pl-20 w-3/5	' key={data?.id} value={data?.id}>
-                <h2 className='text-7xl	text-[#253D4E] font-[Quicksand] font-bold	 '> {data?.title}</h2>
+                <h2 className='text-6xl	text-[#253D4E] font-[Quicksand] font-bold	 '> {data?.title}</h2>
                 <p className='text-3xl mt-8 text-[#7E7E7E]'>{data.description}</p>
                 <button>
                   <a href="/" className='btn btn-primary px-8 py-2 my-4 inline-block shadow-lg hover
