@@ -3,9 +3,9 @@ import React, { useState } from "react";
 const SearchAll = () => {
   const [Category, setCategory] = useState([]);
 
-  fetch("http://localhost:3005/Categories")
-    .then((response) => response.json())
-    .then((data) => setCategory(data));
+//   fetch("http://localhost:3005/Categories")
+//     .then((response) => response.json())
+//     .then((data) => setCategory(data));
 
   return (
     <>

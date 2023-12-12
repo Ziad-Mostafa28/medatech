@@ -1,43 +1,64 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from "react";
 
 const ProductCard = () => {
- const [quantity, setQuantity] = useState(1);
+  const [Popular, setPopular] = useState([]);
 
- const addToCart = () => {
-    // add product to cart logic
- };
+  // fetch("http://localhost:3005/Products")
+  //   .then((response) => response.json())
+  //   .then((data) => setPopular(data));
 
- return (
-    <div className="bg-white shadow-lg rounded-lg p-4">
-    
-    <h2 className="text-xl font-semibold mb-2">Product Name</h2>
-    <p className="text-gray-500 mb-4">Product Description</p>
-    <div className="flex items-center space-x-4">
-        <div className="flex items-center space-x-2">
-        <button
-            onClick={() => setQuantity(quantity - 1)}
-            disabled={quantity === 1}
-            className="px-2 py-1 text-gray-500 bg-gray-200 rounded-lg hover:bg-gray-300 transition-colors"
-        >
-            -
-        </button>
-        <span className="text-xl font-semibold">{quantity}</span>
-        <button
-            onClick={() => setQuantity(quantity + 1)}
-            className="px-2 py-1 text-gray-500 bg-gray-200 rounded-lg hover:bg-gray-300 transition-colors"
-        >
-            +
-        </button>
-        </div>
-        <button
-        onClick={addToCart}
-        className="bg-blue-500 text-white px-4 py-2 rounded-lg"
-        >
-        Add to Cart
-        </button>
-      </div>
+  useEffect(() => {
+    fetch("http://localhost:3005/Products")
+      .then((response) => response.json())
+      .then((data) => setPopular(data));
+  }, []);
+
+  return (
+    <div className="container mx-auto w-4/5 mt-6  flex flex-wrap gap-4">
+      {Popular &&
+        Popular?.map((data) => (
+          <div
+            key={data.id}
+            className="w-[230px] max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700  "
+          >
+            <a href="#">
+              <img
+                className="p-8 rounded-t-lg"
+                src={data?.img}
+                alt="product image"
+              />
+            </a>
+            <div className="px-5 pb-5">
+              <a href="#">
+                <h5 className="text-[1rem] font-semibold tracking-tight text-gray-500 dark:text-white ">
+                  {data?.category_name}
+                </h5>
+              </a>
+              <div className="flex flex-wrap items-center mt-2.5 mb-5">
+                <p className="text-[#253D4E] font-bold">{data?.description}</p>
+                <span className="mt-2.5 text-gray-500">{data?.weight}</span>
+              </div>
+              <div className="flex items-center justify-between">
+                <span className="text-xl font-bold text-gray-900 dark:text-white">
+                  ${data?.Price}
+                </span>
+                <button  href="#" className="flex bg-[#5f1d1d57] text-[#5f1e1c]  font-bold rounded-lg text-sm px-[1.2rem] py-2.5 text-center">Add
+            <svg className='self-center ml-[0.5rem] text-[#5f1e1c]' fill='#5f1e1c' xmlns="http://www.w3.org/2000/svg" height="16" width="14" viewBox="0 0 448 512">
+                <path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/></svg>
+            </button>
+                {/* <input
+                  type="number"
+                  id="quantity"
+                  name="quantity"
+                  min="1"
+                  max="5"
+                ></input> */}
+              </div>
+            </div>
+          </div>
+        ))}
     </div>
- );
+  );
 };
 
 export default ProductCard;

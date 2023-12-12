@@ -4,9 +4,9 @@ const Banner = () => {
 
   const [Bannerss, setBannerss] = useState([]);
 
-  fetch("http://localhost:3005/Banner")
-    .then((response) => response.json())
-    .then((data) => setBannerss(data));
+  // fetch("http://localhost:3005/Banner")
+  //   .then((response) => response.json())
+  //   .then((data) => setBannerss(data));
   return (
     <>
       <div className='container mx-auto w-4/5 mt-6 mb-12'>
