@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 const SearchAll = () => {
   const [Category, setCategory] = useState([]);
@@ -6,7 +6,11 @@ const SearchAll = () => {
 //   fetch("http://localhost:3005/Categories")
 //     .then((response) => response.json())
 //     .then((data) => setCategory(data));
-
+        useEffect(() => {
+                fetch("http://localhost:3005/Categories")
+                .then((response) => response.json())
+                .then((data) => setCategory(data));
+        },[])
   return (
     <>
 

@@ -15,7 +15,7 @@ const Header = () => {
             <SearchAll />
           </div>
           <div className="flex place-self-center gap-x-4	">
-            <a href="/" className="flex">
+            <a href="/" className="flex items-center	">
               <svg
                 width="18"
                 height="25"
@@ -34,7 +34,7 @@ const Header = () => {
               </svg>
               <p className="flex text-xs items-center m-1.5">Account</p>
             </a>
-            <a href="/" className="flex">
+            <a href="/" className="flex items-center	">
               <svg
                 width="25"
                 height="23"
@@ -50,7 +50,7 @@ const Header = () => {
 
               <p className="flex text-xs items-center m-1.5">Wishlist</p>
             </a>
-            <a href="/" npm startclassName="flex">
+            <a href="/" className="flex items-center	">
               <svg
                 width="25"
                 height="25"
